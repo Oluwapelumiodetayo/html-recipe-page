@@ -1,0 +1,207 @@
+/* ============================= */
+/* General Page Styling           */
+/* ============================= */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff8f0; /* soft, warm background */
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #d35400;
+}
+
+/* ============================= */
+/* Header Styling                 */
+/* ============================= */
+
+header {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f7e6d2;
+    border-bottom: 2px solid #d35400;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #d35400;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* ============================= */
+/* Main Container & Layout        */
+/* ============================= */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* ============================= */
+/* Ingredients & Instructions     */
+/* ============================= */
+
+.ingredients, .instructions {
+    background-color: #fff3e0;
+    border-left: 5px solid #d35400;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ingredients:hover, .instructions:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.ingredients h2, .instructions h2 {
+    color: #d35400;
+    margin-bottom: 15px;
+}
+
+.ingredients li, .instructions li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.instructions li:hover {
+    background-color: #ffe6cc;
+    padding-left: 8px;
+    border-radius: 4px;
+}
+
+/* ============================= */
+/* Images Styling                 */
+/* ============================= */
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.03);
+}
+
+/* ============================= */
+/* Buttons & Interactions         */
+/* ============================= */
+
+button {
+    background-color: #d35400;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+/* ============================= */
+/* Tips & Notes Section           */
+/* ============================= */
+
+.tips {
+    margin-top: 20px;
+    background-color: #fff0e6;
+    border-left: 5px solid #e67e22;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* ============================= */
+/* Nutrition Section              */
+/* ============================= */
+
+.nutrition {
+    margin-top: 20px;
+    background-color: #fdf5e6;
+    border-left: 5px solid #d35400;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* ============================= */
+/* Footer Styling                 */
+/* ============================= */
+
+footer {
+    text-align: center;
+    padding: 15px 20px;
+    background-color: #f7e6d2;
+    border-top: 2px solid #d35400;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* ============================= */
+/* Print-Friendly Styles          */
+/* ============================= */
+
+@media print {
+    body {
+        background-color: white;
+        color: black;
+        font-size: 14pt;
+        line-height: 1.4;
+    }
+
+    header, footer, .tips, .nutrition {
+        background-color: white !important;
+        border: none !important;
+        color: black !important;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        page-break-inside: avoid;
+    }
+
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.9em;
+        color: black;
+    }
+
+    button {
+        display: none; /* hide buttons when printing */
+    }
+
+    .recipe-grid {
+        display: block; /* stack ingredients and instructions for print */
+    }
+}
